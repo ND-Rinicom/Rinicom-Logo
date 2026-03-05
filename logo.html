@@ -8,7 +8,6 @@
     html, body {
       height: 100%;
       margin: 0;
-      background: white;
     }
     body {
       display: flex;
@@ -18,10 +17,24 @@
     img {
       max-width: 100%;
       max-height: 100%;
+      animation: redraw 16ms steps(1, end) infinite;
+      will-change: transform;
+    }
+
+    @keyframes redraw {
+      0% {
+        transform: translate3d(0, 0, 0);
+      }
+      50% {
+        transform: translate3d(0.001px, 0, 0);
+      }
+      100% {
+        transform: translate3d(0, 0, 0);
+      }
     }
   </style>
 </head>
 <body>
-  <img src="rinicom-logo.png" alt="Centered Image" />
+  <img src="rinicom-logo.webp" alt="Centered Image" />
 </body>
 </html>
